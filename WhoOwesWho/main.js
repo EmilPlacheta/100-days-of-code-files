@@ -1,80 +1,63 @@
+const $result = document.getElementById('result')
 
-const whatJudySpent = 60
-const whatLydiaSpent = 25
-const whatEmilSpent = 10
+const whatJudySpent = Number(document.getElementById('whatJudySpent').value)
+const whatLydiaSpent = Number(document.getElementById('whatLydiaSpent').value)
+const whatEmilSpent = Number(document.getElementById('whatEmilSpent').value)
 const total = whatJudySpent + whatLydiaSpent + whatEmilSpent
-const share = total / 3
+const share = (total / 3).toFixed(2)
 
-console.log(`Total amount spent: ${total}`)
-console.log(`Equal share is ${share}`)
+console.log(total)
+console.log(share)
 
-
-
-//how much to give back to judy
 const toJudy = function(whatJudySpent, share) {
-  let result =[]
-  if(whatJudySpent > share) {
-    result.push( {
-      message: `Judy should get ${(whatJudySpent - share)} back. £${share - whatLydiaSpent} from Lydia and £${share - whatEmilSpent} from Emil`,
-      amount: whatJudySpent - share 
-    })
-  } else {
-    result.push( {
-      message: `Judy owes ${(share - whatJudySpent) } to whoever paid most `,
-      amount: share - whatJudySpent
-    } )
-  }
-  console.log(result[0].message)
+  const result = whatJudySpent - share 
   return result
 }
 
-//how much to give back to lydia
 const toLydia = function(whatLydiaSpent, share) {
-  let result =[]
-
-  if(whatLydiaSpent > share) {
-    result.push( {
-      message: `Lydia should get £${(whatLydiaSpent - share)} back. £${share - whatJudySpent} from Judy and £${share - whatEmilSpent} from Emil`,
-      amount: whatLydiaSpent - share 
-    })
-  } else {
-    result.push( {
-      message: `Lydia owes ${(share - whatLydiaSpent) } to whoever paid most `,
-      amount: share - whatLydiaSpent
-    } )
-  }
-  console.log(result[0].message)
+  const result = whatLydiaSpent - share 
   return result
 }
-
 
 const toEmil = function(whatEmilSpent, share) {
-  let result =[]
-
-  if(whatEmilSpent > share) {
-    result.push( {
-      message: `Emil should get £${(whatEmilSpent - share)} back. £${share - whatJudySpent} from Judy and £${share - whatLydiaSpent} from Lydia`,
-      amount: whatEmilSpent - share 
-    })
-  } else {
-    result.push( {
-      message: `Emil owes ${(share - whatEmilSpent) } to whoever paid most for the shopping`,
-      amount: share - whatEmilSpent
-    } )
-  }
-  console.log(result[0].message)
+  const result = whatEmilSpent - share 
   return result
 }
 
 
 const whoOwesWho = function(whatJudySpent, whatEmilSpent, whatLydiaSpent) {
+  let result, amountDue;
+
   if(whatJudySpent > whatEmilSpent && whatJudySpent > whatLydiaSpent) {
-    toJudy(whatJudySpent, share)
+    amountDue = toEmil(whatEmilSpent, share).toFixed(2)
+    result = `
+      Judy should get £${amountDue} back. 
+      £${(share - whatLydiaSpent).toFixed(2)} from Lydia 
+      and £${(share - whatEmilSpent).toFixed(2)} from Emil
+      `
+
   } else if(whatEmilSpent > whatJudySpent && whatEmilSpent > whatLydiaSpent) {
-    toEmil(whatEmilSpent, share)
+
+    amountDue = toEmil(whatEmilSpent, share).toFixed(2)
+    result = `
+      Emil should get £${amountDue} back. 
+      £${(share - whatLydiaSpent).toFixed(2)} from Lydia 
+      and £${(share - whatJudySpent).toFixed(2)} from Judy
+      `
+
   } else if (whatLydiaSpent > whatJudySpent && whatLydiaSpent > whatEmilSpent) {
-    toLydia(whatLydiaSpent,share)
+    amountDue = toLydia(whatLydiaSpent, share)
+      result = `
+        Lydia should get £${amountDue} back. 
+        £${(share - whatEmilSpent)} from Emil 
+        and £${(share - whatJudySpent).toFixed(2)} from Judy
+        `
   } 
+  return result
 }
 
-whoOwesWho(whatJudySpent, whatEmilSpent, whatLydiaSpent)
+
+
+const displayResult = whoOwesWho(whatJudySpent, whatEmilSpent, whatLydiaSpent)
+
+$result.innerHTML = displayResult
