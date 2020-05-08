@@ -29,7 +29,7 @@ const whoOwesWho = function(whatJudySpent, whatEmilSpent, whatLydiaSpent) {
   let result, amountDue;
 
   if(whatJudySpent > whatEmilSpent && whatJudySpent > whatLydiaSpent) {
-    amountDue = toEmil(whatEmilSpent, share).toFixed(2)
+    amountDue = toJudy(whatJudySpent, share).toFixed(2)
     result = `
       Judy should get £${amountDue} back. 
       £${(share - whatLydiaSpent).toFixed(2)} from Lydia 
