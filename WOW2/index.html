@@ -5,31 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
-    <main>
-      <div class="container">
-        <h1>WOW2: Second attempt</h1>
-        <h3>How much each of us spent this week?</h3>
-        <div class="form-container">
-          <form>
-            <div class="input-container">
-              <span class="name">Judy: </span>
-              <input type="text" id="whatJudySpent" />
-            </div>
-            <div class="input-container">
-              <span class="name">Lydia: </span>
-              <input type="text" id="whatLydiaSpent" />
-            </div>
-            <div class="input-container">
-              <span class="name">Emil: </span>
-              <input type="text" id="whatEmilSpent" />
-            </div>
-          </form>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h3>Who owes whom?</h3>
+          <blockquote>
+            Enter the amount spent by each of us, to see who should get paid
+            back.
+          </blockquote>
         </div>
       </div>
-    </main>
-    <span id="result"></span>
+
+      <div class="row">
+        <form class="col s12 offset-m1">
+          <div class="row">
+            <div class="input-field col s4 m3">
+              <input id="whatJudySpent" type="text" />
+              <label for="whatJudySpent">Judy</label>
+            </div>
+
+            <div class="input-field col s4 m3">
+              <input id="whatLydiaSpent" type="text" />
+              <label for="whatLydiaSpent">Lydia</label>
+            </div>
+
+            <div class="input-field col s4 m3">
+              <input id="whatEmilSpent" type="text" />
+              <label for="whatEmilSpent">Emil</label>
+            </div>
+          </div>
+          <button
+            class="btn deep-orange darken-2 waves-effect waves-light col s12 m9"
+            id="submit-button"
+            type="submit"
+            name="action"
+          >
+            Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+
+      <div class="divider"></div>
+      <div class="breathe"></div>
+
+      <div class="row hide" id="resultContainer">
+        <div class="col s12 m9 offset-m1">
+          <h4>
+            Together, we have spent
+            <span class="deep-orange-text darken-2">£</span
+            ><span class="deep-orange-text darken-2" id="total">0.00</span>, the
+            fair share is <span class="deep-orange-text darken-2">£</span
+            ><span id="fairShare" class="deep-orange-text darken-2">0.00</span>
+          </h4>
+        </div>
+
+      <div class="breathe"></div>
+
+        <div class="row">
+          <div class="col s12">
+            <p id="result" class="flow-text">result</p>
+          </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
   </body>
