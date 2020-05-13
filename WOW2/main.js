@@ -1,7 +1,7 @@
 const $result = document.getElementById('result');
 const $total = document.getElementById('total');
 const $fairShare = document.getElementById('fairShare');
-const $submitButton = document.getElementById('submit-button');
+const $submitButton = document.getElementById('submitButton');
 const $resultContainer = document.getElementById('resultContainer');
 
 const whatJudySpent = Number(document.getElementById('whatJudySpent').value);
@@ -23,6 +23,8 @@ group.forEach(el => {
   el.balance = (el.amountSpent - fairShare).toFixed(2);
 });
 
+
+
 const calculate = function(group) {
   group.forEach(el =>
     el.balance > 0
@@ -30,18 +32,21 @@ const calculate = function(group) {
       : owe.push(` ${el.name} needs to pay back £${el.balance}`)
   );
 };
-//Calculate and display
 
-$submitButton.addEventListener('click', e => {
-  e.preventDefault();
-  calculate(group);
+const display = function() {
   $resultContainer.classList.remove('hide');
   $submitButton.classList.add('disabled');
-
   $total.innerHTML = total;
   $fairShare.innerHTML = fairShare;
   $result.innerText = `
     ${owed}
     ${owe} 
   `;
+}
+
+//run on click
+$submitButton.addEventListener('click', e => {
+  e.preventDefault();
+  calculate(group);
+  display()
 });
