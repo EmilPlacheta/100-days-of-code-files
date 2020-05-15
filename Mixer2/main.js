@@ -35,10 +35,26 @@ fetch(url)
       let msr10 = item.strMeasure10 ? item.strMeasure10 : '';
 
       cocktailInfo.innerHTML += `
-      <img src=${img} />
-      <h2>${name}</h2>
-      <p>Glass: <span>${glass}</span></p>
+      <div class="row" id="cocktail-container">
+      <div class="col s12 m6 l5">
+        <div class="card">
+          <div class="card-image">
+            <img src="${img}" alt="cocktail" />
+            <span class="card-title hide-on-med-and-up">${name}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col m6 l7" id="cocktail-heading">
+        <h1 class="cocktail-name hide-on-small-only">${name}</h1>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    
+    <div class="row" id="">
+    <div class="col s12 l4">
       <h4>Ingredients</h4>
+      <p>Glass: <span>${glass}</span></p>
       <ul>
         <li>${msr1} ${ingr1}</li>
         <li>${msr2} ${ingr2}</li>
@@ -51,10 +67,18 @@ fetch(url)
         <li>${msr9} ${ingr9}</li>
         <li>${msr10} ${ingr10}</li>
       </ul>
-
+    </div>
+    <div class="col s12 l5 offset-l2">
       <h4>Instructions</h4>
       <p>${instructions}</p>
+    </div>
+  </div>
+        
+          
+
+
+
       `;
     });
-    document.body.append(cocktailInfo);
+    $result.append(cocktailInfo);
   });
