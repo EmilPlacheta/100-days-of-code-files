@@ -1,11 +1,13 @@
 $result = document.querySelector('#result');
+$aboutImg = document.querySelector('#about-img')
+
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
 fetch(url)
   .then(res => res.json())
   .then(data => {
     const cocktailInfo = document.createElement('div');
-    console.log(data.drinks);
+
     data.drinks.map(item => {
       let name = item.strDrink;
       let glass = item.strGlass;
@@ -34,12 +36,12 @@ fetch(url)
       let msr9 = item.strMeasure9 ? item.strMeasure9 : '';
       let msr10 = item.strMeasure10 ? item.strMeasure10 : '';
 
-      cocktailInfo.innerHTML += `
+      cocktailInfo.innerHTML = `
       <div class="row" id="cocktail-container">
       <div class="col s12 m6 l5">
         <div class="card">
           <div class="card-image">
-            <img src="${img}" alt="cocktail" />
+            <img src="${img}" class="responsive-image" alt="cocktail" />
             <span class="card-title hide-on-med-and-up">${name}</span>
           </div>
         </div>
@@ -73,12 +75,9 @@ fetch(url)
       <p>${instructions}</p>
     </div>
   </div>
-        
-          
-
-
-
-      `;
+      `
+      $aboutImg !== null ? $aboutImg.src = img : null
     });
-    $result.append(cocktailInfo);
+    $result !== null ? $result.append(cocktailInfo) : null;
   });
+

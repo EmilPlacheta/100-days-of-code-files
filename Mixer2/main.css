@@ -5,3 +5,25 @@
 #cocktail-heading h1 {
   padding: 4rem;
 }
+
+.brand-logo {
+  padding-left: 2rem;
+  margin-left: 2rem;
+}
+
+nav ul {
+  margin-right: 2rem;
+}
+
+.about a {
+  text-decoration: underline;
+  color: inherit;
+}
+.about a:hover {
+  color: rgb(90, 18, 133)
+}
+
+.breathe {
+  display: block;
+  height: 10rem;
+}
