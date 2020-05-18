@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>k_codes</title>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper white">
+        <a href="index.html" class="brand-logo left black-text">k_codes</a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="index.html" class="black-text">Home</a></li>
+          <li><a href="about.html" class="black-text">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="breathe"></div>
+      <div class="row">
+        <div class="col s12">
+          <div class="selected-key-container">
+            <h1 class="selected-key center-align">_</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="results-container">
+            <div class="row">
+              <div class="col s12 m4 l4">
+                <div class="card">
+                  <div class="card-content">
+                    <p class="center-align">
+                      event.code: <span id="e-code">___</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4 l4">
+                <div class="card">
+                  <div class="card-content">
+                    <p class="center-align">
+                      event.which: <span id="e-which">___</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m4 l4">
+                <div class="card">
+                  <div class="card-content">
+                    <p class="center-align">
+                      event.key: <span id="e-key">___</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <script src="main.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </div>
+  </body>
+</html>

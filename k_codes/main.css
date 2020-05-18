@@ -1,0 +1,24 @@
+
+
+.brand-logo {
+  margin-left: 2rem;
+}
+
+.selected-key {
+  font-size: 20rem;
+  color: rgb(61, 61, 61)
+}
+
+.card-content p {
+  font-family: monospace;
+}
+
+#e-which, #e-code, #e-key {
+  font-family: 'Roboto';
+}
+
+@media (max-width: 500px) {
+  .selected-key {
+    font-size: 5rem;
+  }
+}
