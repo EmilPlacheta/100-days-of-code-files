@@ -20,9 +20,7 @@ body {
   padding: 1rem;
 }
 
-.card h3 {
-  place-self: center;
-}
+
 
 .hidden {
   display: none;
