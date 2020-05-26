@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <link rel="stylesheet" href="/tabs/main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <div role="tablist" aria-label="beer list">
+          <button role="tab" aria-selected="true" id="regulars">
+            Regulars
+          </button>
+          <button role="tab" aria-selected="false" id="monthlies">
+            Seasonals
+          </button>
+          <button role="tab" aria-selected="false" id="seasonals">
+            Monthlies
+          </button>
+          <button role="tab" aria-selected="false" id="keg">
+            Keg
+          </button>
+        </div>
+        <div role="tabpanel" aria-labelledby="regulars">
+          <p>Regulars beer selection</p>
+        </div>
+        <div role="tabpanel" aria-labelledby="monthlies" hidden>
+          <p>Seasonals beer selection</p>
+        </div>
+        <div role="tabpanel" aria-labelledby="seasonals" hidden>
+          <p>Monthlies beer selection</p>
+        </div>
+        <div role="tabpanel" aria-labelledby="keg" hidden>
+          <p>Keg beer selection</p>
+        </div>
+      </div>
+
+      <button>rando</button>
+    </div>
+    <script src="/tabs/main.js"></script>
+  </body>
+</html>
