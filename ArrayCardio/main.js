@@ -144,8 +144,10 @@ console.log(atleastThreeOfEveryMeat);
 // sort the toppings alphabetically with sort()
 const alphabeticalToppings = [...toppings].sort();
 console.log(alphabeticalToppings);
+// sort the order totals from most expensive to least with .sort()
+const sortedTotals = orderTotals.sort((a, b) => b - a);
+console.log(sortedTotals);
 // Sort the prices with sort()
-// sort the order totals from most expensive to least with .sort() in prices variable.
 const sortedPrices = Object.entries(prices).sort((a, b) => b[1] - a[1]);
 console.table(sortedPrices);
 //make it back into an object
