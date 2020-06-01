@@ -30,13 +30,31 @@ const feedback = [
   Static Methods
 */
 
+
+
 // Array.of();
+newArr = Array.of(1,2,3,4,5)
+console.log(newArr);
 
 // Make a function that creates a range from x to y with Array.from();
+function createRangeOfNumbers(start, end) {
+  const range = Array.from({length: end - start + 1},
+  function(item,index) {
+    return index + start
+  })
+  return range
+}
 
 // Check if the last array you created is really an array with Array.isArray();
+const myRange = createRangeOfNumbers(2,3)
+console.log(Array.isArray(myRange));
+
 
 // Take the meats object and make three arrays with Object.entries(), Object.keys, Object.values()
+console.log(Object.entries(meats));
+console.log(Object.keys(meats));
+console.log(Object.values(meats));
+
 
 /*
   Instance Methods
@@ -44,26 +62,26 @@ const feedback = [
 
 // Display all bun types with " or " - use join()
 const bunsJoined = buns.join(' or ')
-console.log(bunsJoined)
+//console.log(bunsJoined)
 
 // We have a string "hot dogs,hamburgers,sausages,corn" - use split() to turn it into a string
 const string = "hot dogs,hamburgers,sausages,corn"
 const stringSplit = string.split(",")
-console.log(stringSplit)
+//console.log(stringSplit)
 
 // take the last item off toppings with pop()
 const toppingsPopped = [...toppings].pop()
-console.log(toppings)
-console.log(toppingsPopped)
+//console.log(toppings)
+//console.log(toppingsPopped)
 // add it back with push()
 toppings.push("Cheese")
-console.log(toppings)
+//console.log(toppings)
 // take the first item off toppings with shift()
 toppings.shift()
-console.log(toppings)
+//console.log(toppings)
 // add it back in with unshift()
 toppings.unshift("Mushrooms")
-console.log(toppings)
+//console.log(toppings)
 // Do the last four,but immutable (with spreads and new variables)
 
 
