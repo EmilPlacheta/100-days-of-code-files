@@ -11,7 +11,7 @@ function surpriseMe() {
       .then(data => {
         const cocktailInfo = document.createElement('div');
 
-        data.drinks.map(item => {
+        data.drinks.forEach(item => {
           let name = item.strDrink;
           let glass = item.strGlass;
           let img = item.strDrinkThumb;
