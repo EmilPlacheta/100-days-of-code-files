@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > * {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.face {
+  position: absolute;
+}
+
+
+/*# sourceMappingURL=/main.af46ece4.css.map */
